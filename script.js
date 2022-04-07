@@ -32,13 +32,23 @@ function addBook(title, author, pageCount, isRead) {
   console.log(newBook.info());
   myLibrary.push(newBook);
 
-  let row = table.getElementsByTagName('tbody')[0].insertRow();
-  let cell1 = row.insertCell();
-  let cell2 = row.insertCell();
-  row.id = table.rows.length - 2;
+  refresh();
+}
 
-  cell1.textContent = title;
-  cell2.textContent = author;
+function refresh() {
+  let tableContent = document.getElementsByTagName('tbody')[0];
+  while (tableContent.firstChild) {
+    tableContent.removeChild(tableContent.firstChild);
+  }
+  for (let i = 0; i < myLibrary.length; i++) {
+    let row = table.getElementsByTagName('tbody')[0].insertRow();
+    let cell1 = row.insertCell();
+    let cell2 = row.insertCell();
+    row.id = table.rows.length - 2;
+  
+    cell1.textContent = myLibrary[i].title;
+    cell2.textContent = myLibrary[i].author;
+  }
 }
 
 function updateLibrary() {
@@ -47,7 +57,8 @@ function updateLibrary() {
   });
 }
 
-function removeBook(arrIndex) {
-  myLibrary.splice(arrIndex, 1);
-  table.getElementsByTagName('tbody')[0].deleteRow(arrIndex);
+function removeBook(bookIndex) {
+  myLibrary.splice(bookIndex, 1);
+  table.getElementsByTagName('tbody')[0].deleteRow(bookIndex);
+  refresh();
 }
