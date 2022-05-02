@@ -5,23 +5,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/21d437851c.js" crossorigin="anonymous"></script>
   <title>Odin Library</title>
 </head>
 <body>
-  <form id="add-book" method="post">
-    <div class="form-container">
-      <label for="title">Title:</label>
-      <input type="text" id="title" name="title">
-      <label for="author">Author:</label>
-      <input type="text" id="author" name="author">
-      <label for="page-count">Number of pages:</label>
-      <input type="number" id="page-count" min="0" max="9999" step="1"/>
-      <div>
-        <input type="checkbox" id="is-read"">
-        <label for="is-read">Check this box if you have read the book</label>
-      </div>
-      <button type="button" id="submit-book-btn">Add Book</button>
-    </div>
+  <details>
+    <summary>Add new book...</summary>
+      <form id="add-book" method="post">
+        <div class="form-container">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title">
+          <label for="author">Author:</label>
+          <input type="text" id="author" name="author">
+          <label for="page-count">Number of pages:</label>
+          <input type="number" id="page-count" min="0" max="9999" step="1"/>
+          <div>
+            <input type="checkbox" id="is-read"">
+            <label for="is-read">Mark as read</label>
+          </div>
+          <button type="button" id="submit-book-btn">Add Book</button>
+        </div>
+    </details>
+  </br>
     <table id="book-list">
       <thead>
         <tr>
@@ -29,6 +34,7 @@
           <th>Author</th>
           <th>Page Count</th>
           <th>Read</th>
+          <th>Delete?</th>
         </tr>
       </thead>
       <tbody></tbody>

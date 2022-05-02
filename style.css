@@ -5,9 +5,54 @@
 }
 
 table, th, td, thead {
-  border: 1px solid black;
+  font-family:'Courier New', Courier, monospace;
 }
 
 table {
   width: 100%;
+  max-width: 70rem;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+
+button[data-btn-index] {
+  background-color: #eb0c05;
+  color: white;
+  border: none;
+  outline: none;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+}
+
+input[data-index] {
+  text-align: center;
+  border-style: 5px solid red;
+}
+
+tr td:nth-child(3) { 
+  text-align: right;
+}
+
+tr td:nth-child(4) { 
+  text-align: center;
+  width: 80px;
+}
+
+tr td:nth-child(5) { 
+  text-align: center;
+  width: 80px;
+}
+
+tr:nth-child(even) {
+  background-color: lightgrey;
+}
+
+thead {
+  background-color: aquamarine;
+}
+
+.fa-xmark {
+  transform: translateX(-4%);
 }
